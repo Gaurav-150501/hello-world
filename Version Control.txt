@@ -1,0 +1,39 @@
+                                Version Control
+
+Version Control is also known as Revision/Source Control System.
+
+The basic concepts:-
+1)Tracking changes
+A version control system is mostly based around one concept, tracking changes that happen within directories or files. Depending on the version control system, this could vary from knowing a file changed to knowing specific characters or bytes in a file have changed.
+
+In most cases, you specify a directory or set of files that should have their changes tracked by version control. This can happen by checking out (or cloning) a repository from a host, or by telling the software which of your files you wish to have under version control.
+
+The set of files or directories that are under version control are more commonly called a repository.
+
+As you make changes, it will track each change behind the scenes. The process will be transparent to you until you are ready to commit those changes.
+
+2)Committing
+As you work with your files that are under version control, each change is tracked automatically. This can include modifying a file, deleting a directory, adding a new file, moving files or just about anything else that might alter the state of the file. Instead of recording each change individually, the version control system will wait for you to submit your changes as a single collection of actions. In version control, this collection of actions is known as a commit.
+
+3)Revisions and Changesets
+When a commit is made, the changes are recorded as a changeset and given a unique revision. This revision could be in the form of an incremented number (1, 2, 3) or a unique hash (like 846eee7d92415cfd3f8a936d9ba5c3ad345831e5) depending on the system. By knowing the revision of a changeset it makes it easy to view or reference it later. A changset will include a reference to the person who made the commit, when the change was made, the files or directories affected, a comment and even the changes that happened within the files (lines of code).
+
+When it comes to collaboration, viewing past revisions and changesets is a valuable tool to see how your project has evolved and for reviewing teammates’ code. Each version control system has a formatted way to view a complete history (or log) of each revision and changeset in the repository.
+
+4)Getting updates
+As members of your team commit changes, it is important that you have the latest version. Having the latest version reduces the chance of a conflict. Getting the latest changes from a repository is as simple as doing a pull or update from another computer (usually a hosted or centralized server). When an update or pull is requested, only the changes since your last request are downloaded.
+
+5)Conflicts
+What if the latest update or commit results in a conflict? That is, what if your changes are so similar to the changes that another team member made that the version control system can’t determine which is the correct and authoritative change? In most cases, the version control system will provide a way to view the difference between the conflicting versions, allowing you to make a choice. You can either edit the files manually to merge the options, or allow one revision to win over the other. You may want to collaborate with the person who made the other commit to make sure you’re not undoing their important work!
+
+6)Diffing (or, viewing the differences)
+Since each commit is recorded as a change to a file or set of files and directories, it is sometimes useful to view what changed between revisions. For instance, if a recent deployment of your web site is broken and you narrowed down the cause to a particular file, the best action to take is to see what recently changed in that file. By viewing a diff, you can compare two files or even a set of files to see what lines of code changed, when it changed and who changed it. Most version control tools let you compare two sequential revisions, but also two revisions from anywhere in the history.
+
+7)Branching and merging
+There are some cases when you want to experiment or commit changes to the repo that could break things elsewhere in your code (like working on a new feature). Instead of committing this code directly to the main set of files (usually referred to as trunk or master), you can create something called a branch. A branch allows you to create a copy (or snapshot) of the repository that you can modify in parallel without altering the main set. You can continue to commit new changes to the branch as you work, while others commit to the trunk or master without the changes affecting each other.
+
+Once you’re comfortable with the experimental code, you will want to make it part of the trunk or master again. This is where merging comes in. Since the version control system has recorded every change so far, it knows how each file has been altered. By merging the branch with the trunk or master (or even another branch), your version control tool will attempt to seamlessly merge each file and line of code automatically. Once a branch is merged it then updates the trunk or master with the latest files.
+
+For example, let’s say you want to experiment with a new layout for a web site. This may require heavy changes in many files, could break existing code and it may not turn out as expected. It could also take a long time, so you want to continue committing the changes. Instead of committing to the trunk or master set of files, you create a branch. From this point forward, any changes made in the new branch will not affect others in the trunk or master. Days or weeks may go by allowing you to commit changes, test and refine. When the new layout is working properly and you are comfortable with the result you are probably ready to make it a permanent part of the site. This is the point where you will merge the branch with the trunk or master. Once the merge is complete, it will combine the changes from the branch with the most recent version of the trunk or master.
+
+In some cases the version control system might not be able to figure out which change to apply between two revisions when doing a merge. If this happens a conflict will arise. A conflict in this scenario is the same as the conflict mentioned above and requires manual intervention to decide which files or lines of code should remain.
